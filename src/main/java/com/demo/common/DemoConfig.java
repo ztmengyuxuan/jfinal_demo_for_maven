@@ -3,6 +3,8 @@ package com.demo.common;
 import com.demo.blog.BlogController;
 import com.demo.common.model._MappingKit;
 import com.demo.index.IndexController;
+import com.demo.login.LoginController;
+import com.demo.register.RegisterController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -23,7 +25,7 @@ import com.jfinal.template.Engine;
  * API 引导式配置
  */
 public class DemoConfig extends JFinalConfig {
-
+	
 	static Prop p;
 	
 	/**
@@ -32,7 +34,7 @@ public class DemoConfig extends JFinalConfig {
 	public static void main(String[] args) {
 		UndertowServer.start(DemoConfig.class);
 	}
-
+	
 	/**
 	 * PropKit.useFirstFound(...) 使用参数中从左到右最先被找到的配置文件
 	 * 从左到右依次去找配置，找到则立即加载并立即返回，后续配置将被忽略
@@ -44,7 +46,7 @@ public class DemoConfig extends JFinalConfig {
 	}
 	
 	/**
-	 * 配置常量
+	 * 此方法用来配置JFinal常量值，如开发模式常量devMode的配置，如下代码配置了JFinal运行在开发模式：
 	 */
 	public void configConstant(Constants me) {
 		loadConfig();
@@ -67,6 +69,8 @@ public class DemoConfig extends JFinalConfig {
 	public void configRoute(Routes me) {
 		me.add("/", IndexController.class, "/index");	// 第三个参数为该Controller的视图存放路径
 		me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
+		me.add("/login", LoginController.class);
+		me.add("/register", RegisterController.class);
 	}
 	
 	public void configEngine(Engine me) {

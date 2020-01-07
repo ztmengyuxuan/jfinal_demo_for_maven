@@ -1,4 +1,4 @@
-
+@charset utf-8;
 body,h1,h2,h3,h4,h5,h6,hr,p,dl,dt,dd,ul,ol,li,pre,code,form,fieldset,legend,button,input,textarea,blockquote,th,td{color:#424041;cursor:default;font-family:Tahoma,Helvetica,Arial,sans-serif;font-size:13px;margin:0;padding:0}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:700}
 img,fieldset,abbr,acronym{border:0}
@@ -42,9 +42,11 @@ h1{font-size:15px;line-height:30px}
 .form_box{width:998px;border:1px solid #89d5ef;background:#fff;margin-bottom:25px;float:left;font-size:13px}
 .form_box form div{overflow:hidden;_zoom:1;line-height:30px}
 .form_box form div label{float:left;padding-right:10px;text-align:right;width:130px}
+.form_box input{width:expression(this.type=="text"?"565px":"style")}
 .form_box form div label.error{width:auto;color:red;padding:0 0 0 10px}
 fieldset.solid{background:#fff;border:1px solid #1E7ACE;margin:10px;padding:10px}
 fieldset.solid legend{color:#1E7ACE;font-weight:700;border:1px solid #1E7ACE;background:#fff;margin:0 20px;padding:3px 20px}
+.form_box .site_monthly_reports_div input{width:expression(this.type=="text"?"100px":"style")}
 .form_box .site_monthly_reports_div input[type=text]{width:100px}
 .form_box .site_monthly_reports_div select{float:left;width:100px}
 .form_box .warning{display:inline;color:red}
